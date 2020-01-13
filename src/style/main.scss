@@ -1,16 +1,16 @@
-// libs
+// библиотеки
 @import "libs/reset";
 @import "libs/slick";
 @import "libs/slick-theme";
 
-// settings
+// основные настройки
 @import "settings/variables";
 @import "settings/mixins";
 @import "settings/animations";
 @import "settings/fonts";
 @import "settings/common";
 
-// components
+// компоненты
 @import "components/promo";
 @import "components/form";
 @import "components/timer";
@@ -23,5 +23,5 @@
 @import "components/popup";
 
 
-// defautl padding (must be at the end)
+// паддинг секций (всегда импортируем в конце файла!)
 @import "settings/padding";

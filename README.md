@@ -1,6 +1,8 @@
+> Для удобства совместной работы на проекте рекомендуется всем установить в свой редактор плагин [EditorConfig](https://editorconfig.org/#download)
+
 ### Установить все зависимости
 
-`npm i`
+`npm install` or `npm i`
 
 ### Основной таск для разработки
 
@@ -28,4 +30,5 @@
 import 'core-js/features/array/includes';
 console.log([1, 2, 3, 4].includes(4));
 ```
+
 Информация о `core-js`: [github](https://github.com/zloirock/core-js).

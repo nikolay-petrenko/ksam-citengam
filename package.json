@@ -1,8 +1,8 @@
 {
   "name": "gulp-template",
-  "version": "1.9.1",
+  "version": "2.0.0",
   "description": "Stay hungry, Stay foolish",
-  "author": "Denys Bondarchuk",
+  "author": "Denys Bondarchuk, Mykola Petrenko",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "7.8.0",

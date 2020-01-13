@@ -5,7 +5,7 @@ export default () => {
     руб: `₽`,
     грн: `₴`
   };
-  
+
   $prices.each(function () {
     const $this = $(this);
     const initValue = $this.text();
@@ -13,7 +13,7 @@ export default () => {
       $this.text(`${initValue[0]} ${initValue.slice(1)}`);
     }
   });
-  
+
   $currencies.each(function () {
     const $this = $(this);
     const initValue = $this.text();
