@@ -1,0 +1,41 @@
+.timer {
+  padding: 0 10px;
+  color: black;
+  line-height: 1;
+  text-align: center;
+}
+
+.timer__main-label {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.timer__cells {
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+}
+
+.timer__cell {
+  position: relative;
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.timer__cell:not(:last-of-type) {
+  padding-right: 14px;
+}
+
+.timer__cell:not(:last-of-type)::after {
+  content: ":";
+  position: absolute;
+  top: -1px;
+  right: 3px;
+}
+
+.timer__label {
+  position: relative;
+  top: -2px;
+  font-size: 9px;
+  font-weight: 300;
+}

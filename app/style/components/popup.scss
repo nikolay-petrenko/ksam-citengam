@@ -1,0 +1,39 @@
+.ever-popup .form {
+  padding: 15px;
+  background-image: url("../img/promo-background.jpg");
+  background-position: top left;
+  border-radius: 10px;
+}
+
+.ever-popup .form__container {
+  justify-content: space-between;
+  padding-top: 0;
+}
+
+.ever-popup .form__price {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  padding-right: 0;
+}
+
+.ever-popup .form-price {
+  min-width: auto;
+  padding-left: 0;
+}
+
+.ever-popup .ever-popup__close::before,
+.ever-popup .ever-popup__close::after {
+  height: 5px !important;
+}
+
+@include r(479) {
+  .ever-popup__inner {
+    width: 300px !important;
+  }
+  
+  .ever-popup .form {
+    width: 300px;
+    margin: 0 auto;
+  }
+}

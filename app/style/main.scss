@@ -1,0 +1,27 @@
+// libs
+@import "libs/reset";
+@import "libs/slick";
+@import "libs/slick-theme";
+
+// settings
+@import "settings/variables";
+@import "settings/mixins";
+@import "settings/animations";
+@import "settings/fonts";
+@import "settings/common";
+
+// components
+@import "components/promo";
+@import "components/form";
+@import "components/timer";
+@import "components/form-price";
+@import "components/form-amount";
+@import "components/button";
+@import "components/advantages";
+@import "components/about";
+@import "components/footer";
+@import "components/popup";
+
+
+// defautl padding (must be at the end)
+@import "settings/padding";

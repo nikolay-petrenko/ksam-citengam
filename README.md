@@ -1,16 +1,31 @@
-### Install all dependencies
-npm i
+### Установить все зависимости
 
-### Main task for work and automatic build
-gulp
+`npm i`
 
-### Delete sourcemaps, add localization and create archive.zip with all files inside
-gulp deploy
+### Основной таск для разработки
 
-### Create component
-gulp make --componentName--option
+`gulp`
 
-* without option  --html/scss
-* option == 1     --html/sass 
-* option == 2     --html/scss/js 
-* option == 3     --html/sass/js 
+### Таск для деплоя на сервер
+
+`gulp deploy`
+
+### Создать компонент
+
+`gulp make --componentName--option`
+
+`* without option  --html/scss`
+
+`* option == 1     --html/sass`
+
+`* option == 2     --html/scss/js`
+
+`* option == 3     --html/sass/js`
+
+### Пример подключения js-полифила:
+
+```js
+import 'core-js/features/array/includes';
+console.log([1, 2, 3, 4].includes(4));
+```
+Информация о `core-js`: [github](https://github.com/zloirock/core-js).

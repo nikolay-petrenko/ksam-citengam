@@ -1,0 +1,258 @@
+.about {
+  margin-top: -10px;
+  padding: 154px 0 71px;
+  background-image: url("../img/about-background.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.about__items {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.about__item {
+  display: flex;
+  flex: 1 1 auto;
+  flex-basis: calc(100% / 3);
+  min-height: 210px;
+}
+
+.about__item:nth-child(-n + 3) {
+  min-height: 150px;
+}
+
+.about__item:nth-last-child(-n + 4) {
+  min-height: 200px;
+}
+
+.about__item.bd-t {
+  border-top: 1px solid #d9d8d8;
+}
+
+.about__item.bd-b {
+  border-bottom: 1px solid #d9d8d8;
+}
+
+.about__item.bd-l {
+  border-left: 1px solid #d9d8d8;
+}
+
+.about__item.bd-r {
+  border-right: 1px solid #d9d8d8;
+}
+
+.about__item:not([class$="empty"]) {
+  cursor: pointer;
+  perspective: 1200;
+  transform-style: preserve-3d;
+}
+
+.about__flipp {
+  position: relative;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform $transition-duration;
+}
+
+.about__item:not([class$="empty"]):hover .about__flipp {
+  transform: rotateY(180deg);
+}
+
+.about__front,
+.about__back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-family: $montserrat;
+  text-align: center;
+  backface-visibility: hidden;
+}
+
+.about__front {
+  flex-direction: column;
+  transform: rotateY(0deg);
+}
+
+.about__icon {
+  margin-bottom: 10px;
+}
+
+.about__label {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.about__show {
+  display: none;
+}
+
+.about__back {
+  top: 50%;
+  left: 50%;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  padding: 15px;
+  background-color: $color-yellow;
+  transform: translate(-50%, -50%) rotateY(-180deg);
+}
+
+.about__description {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: (22 / 16);
+}
+
+.about__person {
+  position: absolute;
+  bottom: -18px;
+  left: calc(50% - 13px);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.about__person-img {
+  max-width: none;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .about__item {
+    max-width: calc(100% / 3);
+  }
+
+  .about__flip {
+    transform-style: flat;
+  }
+
+  .about__item:not([class$="empty"]):hover .about__flipp {
+    transform: none;
+  }
+
+  .about__back {
+    transition: transform $transition-duration;
+    transform: translate(-50%, -50%) scale(0);
+  }
+
+  .about__item:not([class$="empty"]):hover .about__back {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@include r(1023) {
+  .about {
+    margin-top: 0;
+    background: #fff5f6;
+    overflow: hidden;
+  }
+
+  .about__item {
+    flex-basis: calc(100% / 2);
+    min-height: auto !important;
+    padding: 10px;
+  }
+
+  .about__item:nth-of-type(even) {
+    border-left: none !important;
+  }
+
+  .about__item:hover,
+  .about__item:hover .about__flipp {
+    transform: none !important;
+  }
+
+  .about__item--empty {
+    display: none;
+  }
+
+  .about__front,
+  .about__back {
+    position: static;
+    height: auto;
+    transform: none !important;
+  }
+
+  .about__front {
+    margin-bottom: 0;
+  }
+
+  .about__label {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .about__show {
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: $color-yellow;
+    border-radius: 50%;
+    transition: color, box-shadow, $transition-duration;
+    cursor: pointer;
+  }
+
+  .about__show::before,
+  .about__show::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 15px;
+    border-bottom: 3px solid white;
+    transition: border-color, transform $transition-duration;
+    transform: translate(-50%, -50%);
+  }
+
+  .about__show::after {
+    transform: translate(-50%, -50%) rotate(-90deg);
+  }
+
+  .about__item.show .about__show {
+    background-color: $color-gray;
+  }
+
+  .about__item.show .about__show::before,
+  .about__item.show .about__show::after {
+    border-color: black;
+  }
+
+  .about__item.show .about__show::after {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+
+  .about__show:hover {
+    box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.17);
+  }
+
+  .about__back {
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .about__description {
+    padding-top: 10px;
+    font-size: 14px;
+  }
+
+  .about__person {
+    display: none;
+  }
+}
+
+@include r(479) {
+  .about__items {
+    justify-content: center;
+  }
+
+  .about__item {
+    flex: 0 0 290px;
+    border: none !important;
+  }
+}

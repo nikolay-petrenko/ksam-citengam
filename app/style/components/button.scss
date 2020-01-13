@@ -1,0 +1,46 @@
+.button {
+  display: block;
+  width: 100%;
+  max-width: 220px;
+  height: 60px;
+  padding: 0;
+  color: black;
+  font: inherit;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 40px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: lowercase;
+  background-color: $color-yellow;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: color, background-color, box-shadow, $transition-duration;
+}
+
+.button:hover {
+  color: white;
+  background-color: $color-red;
+}
+
+.button--amount {
+  width: 105px;
+  height: 40px;
+  background-color: $color-gray;
+  border-radius: 20px;
+}
+
+.button--amount:hover,
+.button--amount:active {
+  color: black;
+  background-color: $color-gray;
+  box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.17);
+}
+
+.button--amount.active {
+  background-color: $color-yellow;
+}
+
+.button--amount.active:hover {
+  background-color: $color-yellow;
+}

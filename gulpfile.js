@@ -13,11 +13,17 @@ const wait 			= require('gulp-wait');
 const svgmin 		= require('gulp-svgmin');
 const zipper 		= require("zip-local");
 
+const rollup = require('rollup');
+const commonjs = require('@rollup/plugin-commonjs');
+const resolve = require ('@rollup/plugin-node-resolve');
+const babel = require('rollup-plugin-babel');
+
 let path = {
 	src: {
 		html: 'app/*.html',
-		style: 'app/style/main.sass',
-		scripts: 'app/js/**/*.js',
+		style: 'app/style/main.scss',
+		// scripts: 'app/js/**/*.js',
+		scripts: 'app/js/libs/*.js',
 		img: 'app/img/*.+(jpg|jpeg|png|svg|ico|gif)',
 		svg: 'app/img/**/*.svg',
 		fonts: 'app/fonts/**/*',
@@ -84,13 +90,30 @@ gulp.task('style', function(done){
     	.pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('scripts', function() {
-	return gulp.src(path.src.scripts)
-		.pipe(sourcemaps.init())
-		.pipe(include())
-		.pipe(sourcemaps.write())
-		.pipe(gulp.dest(path.build.scripts))
-		.pipe(browserSync.reload({stream: true}));
+// gulp.task('scripts', function() {
+// 	return gulp.src(path.src.scripts)
+// 		.pipe(sourcemaps.init())
+// 		.pipe(include())
+// 		.pipe(sourcemaps.write())
+// 		.pipe(gulp.dest(path.build.scripts))
+// 		.pipe(browserSync.reload({stream: true}));
+// });
+
+gulp.task('scripts', async function () {
+  const bundle = await rollup.rollup({
+    input: 'app/js/main.js',
+    plugins: [commonjs(), resolve(), babel()]
+  });
+
+  await bundle.write({
+      file: 'build/js/main.js',
+      format: 'iife',
+      sourcemap: true
+  });
+
+  return gulp.src(path.src.scripts)
+    .pipe(gulp.dest(path.build.scripts))
+    .pipe(browserSync.reload({stream: true}));
 });
 
 gulp.task('img', function() {
@@ -136,11 +159,28 @@ gulp.task('deploy:style', function(){
 		.pipe(gulp.dest(path.build.style))
 });
 
-gulp.task('deploy:scripts', function() {
-	return gulp.src(path.src.scripts)
-		.pipe(include())
-		.pipe(gulp.dest(path.build.scripts))
-		.pipe(browserSync.reload({stream: true}));
+// gulp.task('deploy:scripts', function() {
+// 	return gulp.src(path.src.scripts)
+// 		.pipe(include())
+// 		.pipe(gulp.dest(path.build.scripts))
+// 		.pipe(browserSync.reload({stream: true}));
+// });
+
+gulp.task('deploy:scripts', async function () {
+  const bundle = await rollup.rollup({
+    input: 'app/js/main.js',
+    plugins: [commonjs(), resolve(), babel()]
+  });
+
+  await bundle.write({
+      file: 'build/js/main.js',
+      format: 'iife',
+      sourcemap: false
+  });
+
+  return gulp.src(path.src.scripts)
+    .pipe(gulp.dest(path.build.scripts))
+    .pipe(browserSync.reload({stream: true}));
 });
 
 gulp.task('clean', function() {

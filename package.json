@@ -5,7 +5,12 @@
   "author": "Denys Bondarchuk",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "7.8.0",
+    "@babel/preset-env": "7.8.2",
+    "@rollup/plugin-commonjs": "^11.0.1",
+    "@rollup/plugin-node-resolve": "^7.0.0",
     "browser-sync": "^2.26.3",
+    "core-js": "3.6.3",
     "del": "^4.0.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^6.0.0",
@@ -16,6 +21,8 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-svgmin": "^2.2.0",
     "gulp-wait": "0.0.2",
+    "rollup": "1.29.0",
+    "rollup-plugin-babel": "4.3.3",
     "run-sequence": "^2.2.1",
     "zip-local": "^0.3.4"
   }
