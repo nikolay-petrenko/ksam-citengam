@@ -197,19 +197,19 @@ gulp.task('folder', function () {
 
 gulp.task('files', function() {
 	if (!level) {
-		fs.writeFileSync('app/components/' + name + '/' + name + '.html','')
-		fs.writeFileSync('app/components/' + name + '/' + name + '.scss','')
+		fs.writeFileSync(`app/templates/${name}.html`,'')
+		fs.writeFileSync(`app/style/components/${name}.scss`,'')
 	} else if (level == 1) {
-		fs.writeFileSync('app/components/' + name + '/' + name + '.html','')
-		fs.writeFileSync('app/components/' + name + '/' + name + '.sass','')
+		fs.writeFileSync(`app/templates/${name}.html`,'')
+		fs.writeFileSync(`app/style/components/${name}.sass`,'')
 	} else if (level == 2) {
-		fs.writeFileSync('app/components/' + name + '/' + name + '.html','')
-		fs.writeFileSync('app/components/' + name + '/' + name + '.scss','')
-		fs.writeFileSync('app/components/' + name + '/' + name + '.js','')
+		fs.writeFileSync(`app/templates/${name}.html`,'')
+		fs.writeFileSync(`app/style/components/${name}.scss`,'')
+		fs.writeFileSync(`app/js/modules/${name}.js`,'')
 	} else if (level == 3) {
-		fs.writeFileSync('app/components/' + name + '/' + name + '.html','')
-		fs.writeFileSync('app/components/' + name + '/' + name + '.sass','')
-		fs.writeFileSync('app/components/' + name + '/' + name + '.js','')
+		fs.writeFileSync(`app/templates/${name}.html`,'')
+		fs.writeFileSync(`app/style/components/${name}.sass`,'')
+		fs.writeFileSync(`app/js/modules/${name}.js`,'')
 	}
 });
 
