@@ -20,14 +20,14 @@ const babel = require('rollup-plugin-babel');
 
 let path = {
 	src: {
-		html: 'app/*.html',
-		style: 'app/style/main.scss',
-		// scripts: 'app/js/**/*.js',
-		scripts: 'app/js/libs/*.js',
-		img: 'app/img/*.+(jpg|jpeg|png|svg|ico|gif)',
-		svg: 'app/img/**/*.svg',
-		fonts: 'app/fonts/**/*',
-		localization: "app/localization/*.json"
+		html: 'src/*.html',
+		style: 'src/style/main.scss',
+		// scripts: 'src/js/**/*.js',
+		scripts: 'src/js/libs/*.js',
+		img: 'src/img/*.+(jpg|jpeg|png|svg|ico|gif)',
+		svg: 'src/img/**/*.svg',
+		fonts: 'src/fonts/**/*',
+		localization: "src/localization/*.json"
 	},
 	build: {
 		html: 'build',
@@ -38,13 +38,13 @@ let path = {
 		localization: "build/localization"
 	},
 	watch: {
-		htmlApp: 'app/*.html',
-		html: 'app/components/**/*.html',
-		style: 'app/**/*.+(sass|scss)',
-		scripts: 'app/**/*.js',
-		img: 'app/img/*.+(jpg|jpeg|png|svg|ico|gif)',
-		svg: 'app/img/**/*.svg',
-		fonts: 'app/fonts/**/*'
+		htmlApp: 'src/*.html',
+		html: 'src/components/**/*.html',
+		style: 'src/**/*.+(sass|scss)',
+		scripts: 'src/**/*.js',
+		img: 'src/img/*.+(jpg|jpeg|png|svg|ico|gif)',
+		svg: 'src/img/**/*.svg',
+		fonts: 'src/fonts/**/*'
 	}
 };
 
@@ -76,7 +76,6 @@ gulp.task('style', function(done){
       	}))
     	.pipe(concat('main.css'))
     	.pipe(autoprefixer({
-    	  browsers: ['last 2 versions'],
     	  cascade: false 
     	}))
     	.pipe(csso({
@@ -101,7 +100,7 @@ gulp.task('style', function(done){
 
 gulp.task('scripts', async function () {
   const bundle = await rollup.rollup({
-    input: 'app/js/main.js',
+    input: 'src/js/main.js',
     plugins: [commonjs(), resolve(), babel()]
   });
 
@@ -150,7 +149,6 @@ gulp.task('deploy:style', function(){
 		.pipe(sass())
 		.pipe(concat('main.css'))
 		.pipe(autoprefixer({
-			browsers: ['last 2 versions'],
 			cascade: false 
 		}))
 		.pipe(csso({
@@ -168,7 +166,7 @@ gulp.task('deploy:style', function(){
 
 gulp.task('deploy:scripts', async function () {
   const bundle = await rollup.rollup({
-    input: 'app/js/main.js',
+    input: 'src/js/main.js',
     plugins: [commonjs(), resolve(), babel()]
   });
 
@@ -192,24 +190,24 @@ const level = process.argv[process.argv.length - 1].split('--')[2];
 
 gulp.task('folder', function () {
     return gulp.src('*.*', {read: false})
-        .pipe(gulp.dest('app/components/'+ name))
+        .pipe(gulp.dest('src/components/'+ name))
 });
 
 gulp.task('files', function() {
 	if (!level) {
-		fs.writeFileSync(`app/templates/${name}.html`,'')
-		fs.writeFileSync(`app/style/components/${name}.scss`,'')
+		fs.writeFileSync(`src/templates/${name}.html`,'')
+		fs.writeFileSync(`src/style/components/${name}.scss`,'')
 	} else if (level == 1) {
-		fs.writeFileSync(`app/templates/${name}.html`,'')
-		fs.writeFileSync(`app/style/components/${name}.sass`,'')
+		fs.writeFileSync(`src/templates/${name}.html`,'')
+		fs.writeFileSync(`src/style/components/${name}.sass`,'')
 	} else if (level == 2) {
-		fs.writeFileSync(`app/templates/${name}.html`,'')
-		fs.writeFileSync(`app/style/components/${name}.scss`,'')
-		fs.writeFileSync(`app/js/modules/${name}.js`,'')
+		fs.writeFileSync(`src/templates/${name}.html`,'')
+		fs.writeFileSync(`src/style/components/${name}.scss`,'')
+		fs.writeFileSync(`src/js/modules/${name}.js`,'')
 	} else if (level == 3) {
-		fs.writeFileSync(`app/templates/${name}.html`,'')
-		fs.writeFileSync(`app/style/components/${name}.sass`,'')
-		fs.writeFileSync(`app/js/modules/${name}.js`,'')
+		fs.writeFileSync(`src/templates/${name}.html`,'')
+		fs.writeFileSync(`src/style/components/${name}.sass`,'')
+		fs.writeFileSync(`src/js/modules/${name}.js`,'')
 	}
 });
 
