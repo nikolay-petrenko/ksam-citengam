@@ -1,0 +1,184 @@
+.expert {
+  padding: 45px 0 67px;
+}
+
+.expert__container {
+  border-top: 1px solid #e1dede;
+}
+
+.expert__title {
+  margin-bottom: 46px;
+  padding-top: 72px;
+  text-align: center;
+}
+
+.expert__quote {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: $color-lightpink;
+}
+
+.expert__photo {
+  flex: 1 0 305px;
+}
+
+.expert__body {
+  position: relative;
+  margin: 8px;
+  margin-left: 27px;
+  padding: 28px;
+  padding-right: 220px;
+  font-size: 24px;
+  line-height: (32 / 24);
+  border: 4px solid white;
+  border-radius: 3px;
+}
+
+.expert__body::before {
+  content: "";
+  position: absolute;
+  top: -16px;
+  left: 27px;
+  width: 46px;
+  height: 34px;
+  background-image: url("../img/expert-quotes.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.expert__description {
+  padding-top: 34px;
+}
+
+.expert__description b {
+  font-weight: 700;
+}
+
+.expert__name {
+  padding-top: 20px;
+  display: block;
+  color: $color-red;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.expert__pack {
+  position: absolute;
+  bottom: -64px;
+  right: -24px;
+  width: 321px;
+}
+
+@include r(1219) {
+  .expert__title {
+    margin-bottom: 40px;
+    padding-top: 50px;
+    font-size: 40px;
+  }
+
+  .expert__body {
+    margin: 0;
+    margin-left: 20px;
+    padding: 20px;
+    padding-right: 0;
+    font-size: 20px;
+  }
+
+  .expert__description {
+    padding-top: 20px;
+  }
+
+  .expert__pack {
+    bottom: -55px;
+    right: 5px;
+    width: 280px;
+  }
+}
+
+@include r(1023) {
+  .expert__title {
+    margin-bottom: 35px;
+    padding-top: 40px;
+    font-size: 38px;
+  }
+
+  .expert__photo {
+    flex-basis: 250px;
+  }
+
+  .expert__body {
+    padding: 10px;
+    font-size: 18px;
+  }
+
+  .expert__name {
+    padding-top: 10px;
+  }
+
+  .expert__pack {
+    width: 230px;
+  }
+}
+
+@include r(767) {
+  .expert__title {
+    margin-bottom: 30px;
+    padding-top: 30px;
+    font-size: 34px;
+  }
+
+  .expert__photo {
+    flex-basis: 220px;
+  }
+
+  .expert__body {
+    font-size: 16px;
+  }
+
+  .expert__pack {
+    width: 200px;
+  }
+}
+
+@include r(639) {
+  .expert__container {
+    border: none;
+  }
+
+  .expert__title {
+    margin-bottom: 15px;
+    padding-top: 0;
+    font-size: 30px;
+  }
+
+  .expert__quote {
+    display: block;
+    width: 290px;
+    margin: 0 auto;
+    padding: 10px;
+  }
+
+  .expert__body {
+    margin-left: 0;
+  }
+
+  .expert__photo {
+    margin-bottom: 20px;
+  }
+
+  .expert__description {
+    padding-top: 10px;
+  }
+
+  .expert__pack {
+    display: none;
+  }
+}
+
+@include r(479) {
+  .expert__title {
+    font-size: 28px;
+  }
+}

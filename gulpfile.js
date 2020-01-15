@@ -13,6 +13,8 @@ const wait = require('gulp-wait');
 const svgmin = require('gulp-svgmin');
 const zipper = require("zip-local");
 
+const plumber = require('gulp-plumber');
+const pug = require('gulp-pug');
 const rollup = require('rollup');
 const commonjs = require('@rollup/plugin-commonjs');
 const resolve = require('@rollup/plugin-node-resolve');
@@ -20,9 +22,8 @@ const babel = require('rollup-plugin-babel');
 
 let path = {
   src: {
-    html: 'src/*.html',
+    pug: 'src/templates/*.pug',
     style: 'src/style/main.scss',
-    // scripts: 'src/js/**/*.js',
     scripts: 'src/js/libs/*.js',
     img: 'src/img/*.+(jpg|jpeg|png|svg|ico|gif)',
     svg: 'src/img/**/*.svg',
@@ -38,8 +39,7 @@ let path = {
     localization: "build/localization"
   },
   watch: {
-    htmlApp: 'src/*.html',
-    html: 'src/components/**/*.html',
+    pug: 'src/templates/**/*.pug',
     style: 'src/**/*.+(sass|scss)',
     scripts: 'src/**/*.js',
     img: 'src/img/*.+(jpg|jpeg|png|svg|ico|gif)',
@@ -61,8 +61,9 @@ gulp.task('browser-sync', function () {
 });
 
 gulp.task('html', function () {
-  return gulp.src(path.src.html)
-    .pipe(include())
+  return gulp.src(path.src.pug)
+    .pipe(plumber())
+    .pipe(pug())
     .pipe(gulp.dest(path.build.html))
     .pipe(browserSync.reload({ stream: true }));
 });
@@ -88,15 +89,6 @@ gulp.task('style', function (done) {
     })
     .pipe(browserSync.reload({ stream: true }));
 });
-
-// gulp.task('scripts', function() {
-// 	return gulp.src(path.src.scripts)
-// 		.pipe(sourcemaps.init())
-// 		.pipe(include())
-// 		.pipe(sourcemaps.write())
-// 		.pipe(gulp.dest(path.build.scripts))
-// 		.pipe(browserSync.reload({stream: true}));
-// });
 
 gulp.task('scripts', async function () {
   const bundle = await rollup.rollup({
@@ -157,13 +149,6 @@ gulp.task('deploy:style', function () {
     .pipe(gulp.dest(path.build.style))
 });
 
-// gulp.task('deploy:scripts', function() {
-// 	return gulp.src(path.src.scripts)
-// 		.pipe(include())
-// 		.pipe(gulp.dest(path.build.scripts))
-// 		.pipe(browserSync.reload({stream: true}));
-// });
-
 gulp.task('deploy:scripts', async function () {
   const bundle = await rollup.rollup({
     input: 'src/js/main.js',
@@ -195,17 +180,17 @@ gulp.task('folder', function () {
 
 gulp.task('files', function () {
   if (!level) {
-    fs.writeFileSync(`src/templates/${name}.html`, '')
+    fs.writeFileSync(`src/templates/components/${name}.pug`, '')
     fs.writeFileSync(`src/style/components/${name}.scss`, '')
   } else if (level == 1) {
-    fs.writeFileSync(`src/templates/${name}.html`, '')
+    fs.writeFileSync(`src/templates/components/${name}.pug`, '')
     fs.writeFileSync(`src/style/components/${name}.sass`, '')
   } else if (level == 2) {
-    fs.writeFileSync(`src/templates/${name}.html`, '')
+    fs.writeFileSync(`src/templates/components/${name}.pug`, '')
     fs.writeFileSync(`src/style/components/${name}.scss`, '')
     fs.writeFileSync(`src/js/modules/${name}.js`, '')
   } else if (level == 3) {
-    fs.writeFileSync(`src/templates/${name}.html`, '')
+    fs.writeFileSync(`src/templates/components/${name}.pug`, '')
     fs.writeFileSync(`src/style/components/${name}.sass`, '')
     fs.writeFileSync(`src/js/modules/${name}.js`, '')
   }
@@ -220,7 +205,7 @@ gulp.task('archive', function () {
 });
 
 gulp.task('watch', ['clean', 'browser-sync', 'html', 'style', 'scripts', 'img', 'fonts'], function () {
-  gulp.watch([path.watch.htmlApp, path.watch.html], ['html']);
+  gulp.watch([path.watch.pug], ['html']);
   gulp.watch([path.watch.style], ['style']);
   gulp.watch([path.watch.img], ['img']);
   gulp.watch([path.watch.scripts], ['scripts']);

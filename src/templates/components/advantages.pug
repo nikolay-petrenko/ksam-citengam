@@ -1,0 +1,15 @@
+-
+  const advantagesItems = [
+    {img: "img/advantages-01.jpg", description: "Вытягивает грязь <br>из&nbsp;пор"},
+    {img: "img/advantages-02.jpg", description: "Придает коже цветущий вид и&nbsp;выравнивает фон"},
+    {img: "img/advantages-03.jpg", description: "Стимулирует обновление клеток и&nbsp;восстанавливает текстуру кожи"}
+  ];
+|
+section#advantages.advantages.block
+  .advantages__container.container
+    ul.advantages__list
+      each item in advantagesItems
+        li.advantages__item
+          .advantages__picture
+            img.advantages__img(src=item.img alt="")
+          p.advantages__description!= item.description

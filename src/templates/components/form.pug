@@ -1,0 +1,20 @@
+form.x_order_form.form(action="/submit", method="POST")
+  .form__container
+    .form__price
+      include form-price
+    .form__body
+      .form__top
+        .form__discount
+          span.form__discount-label Скидка
+          span.form__discount-value 70%
+        .form__timer
+          include timer
+      .form__middle
+        .form__amount
+          include form-amount
+        .form__fields
+          .form__field
+            input.form__input(type="text", name="name", placeholder="Ваше имя")
+          .form__field
+            input.form__input(type="text", name="phone", placeholder="Ваш телефон")
+        button.form__button.button(type="submit") заказать

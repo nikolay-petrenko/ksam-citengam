@@ -1,0 +1,19 @@
+include ../data/about-data
+section.about.block
+  .about__container.container
+    .about__items
+      each item in aboutItems
+        if item.isEmpty
+          div(class=["about__item", "about__item--empty", item.addClassNames])
+        else
+          blockquote(class=["about__item", item.addClassNames])
+            .about__flipp
+              .about__front
+                .about__icon
+                  img.about__icon-img(src=item.img, alt="")
+                p.about__label!= item.label
+                button.about__show(type="button")
+              .about__back
+                p.about__description!= item.description
+      .about__person
+        img.about__person-img(src='img/about-person.png', alt='')

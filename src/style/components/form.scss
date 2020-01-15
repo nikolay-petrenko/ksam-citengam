@@ -1,5 +1,6 @@
 .form {
   min-width: 470px;
+  font-family: $roboto;
 }
 
 .form__container {
@@ -70,6 +71,7 @@
 
 .form__input {
   display: block;
+  height: 52px;
   padding-left: 25px;
   padding-right: 10px;
   width: 100%;

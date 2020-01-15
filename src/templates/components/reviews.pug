@@ -1,0 +1,26 @@
+include ../data/reviews-data
+section.reviews.block
+  .reviews__container.container
+    h2.reviews__title.title О нашем товаре в&nbsp;соцсетях
+    .reviews__items
+      .reviews__wrapper#reviews-wrapper
+        each item in reviewsItems
+          blockquote.reviews__item
+            .reviews__thumb
+              img.reviews__thumb.img(src=item.thumb, alt="")
+            .reviews__body
+              p.reviews__description
+                span.reviews__name= item.name
+                |
+                |
+                span= item.description
+              .reviews__footer
+                .reviews__triggers
+                  span.reviews__trigger Mi piace
+                  |
+                  |
+                  span.reviews__trigger Rispondi
+                  |
+                  |
+                  span.reviews__days-ago= `${item.ago} giorni fa`
+                .reviews__counters= item.likes

@@ -1,0 +1,20 @@
+include ../data/carousel-data
+section.carousel.block
+  .carousel__container.container
+    .carousel__labels
+      p.carousel__label Обычные маски
+      p.carousel__label.carousel__label--second Магнитная маска
+    .carousel__body
+      .carousel__carousel
+        each item in carouselItems
+          .carousel__slide
+            .carousel__item
+              .carousel__block.carousel__block--bad
+                .carousel__picture
+                  img.carousel__picture-img(src=item.bad.img, alt="")
+                p.carousel__description!= item.bad.description
+              .carousel__block.carousel__block--good
+                .carousel__picture
+                  img.carousel__picture-img(src=item.good.img, alt="")
+                p.carousel__description!= item.good.description
+      .carousel__navigation

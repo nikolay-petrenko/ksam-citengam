@@ -2,6 +2,7 @@
 @import "libs/reset";
 @import "libs/slick";
 @import "libs/slick-theme";
+@import "libs/overlay-scrollbars";
 
 // основные настройки
 @import "settings/variables";
@@ -19,6 +20,10 @@
 @import "components/button";
 @import "components/advantages";
 @import "components/about";
+@import "components/carousel";
+@import "components/expert";
+@import "components/reviews";
+@import "components/order";
 @import "components/footer";
 @import "components/popup";
 

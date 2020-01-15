@@ -1,0 +1,30 @@
+extends settings/layout
+
+prepend html
+  - const lang = "ru";
+
+prepend head
+  - const pageTitle = "Compra Magnetic Mask ad un prezzo vantaggioso. Prezzi, recensioni. Ordinate Magnetic Mask ora!";
+  - const themeColor = "#fff5f6";
+
+append head
+
+append fonts
+  link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,400i,500,500i,700,900&subset=cyrillic,cyrillic-ext")
+  link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap&subset=cyrillic")
+
+append content
+  include components/promo
+  include components/advantages
+  include components/about
+  include components/carousel
+  include components/expert
+  include components/reviews
+  include components/order
+  include components/promo
+  include components/footer
+  include components/popup
+
+append scripts
+  script(src="js/jquery.overlay-scrollbars.min.js")
+  script(src="js/main.js")

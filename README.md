@@ -1,4 +1,4 @@
-> Для удобства совместной работы на проекте рекомендуется всем установить в свой редактор плагин [EditorConfig](https://editorconfig.org/#download)
+> Для удобства совместной работы на проекте, рекомендуется всем установить в свой редактор плагин [EditorConfig](https://editorconfig.org/#download).
 
 ### Установить все зависимости
 
@@ -16,13 +16,13 @@
 
 `gulp make --componentName--option`
 
-`* without option  --html/scss`
+`* without option  --pug/scss`
 
-`* option == 1     --html/sass`
+`* option == 1     --pug/sass`
 
-`* option == 2     --html/scss/js`
+`* option == 2     --pug/scss/js`
 
-`* option == 3     --html/sass/js`
+`* option == 3     --pug/sass/js`
 
 ### Пример подключения js-полифила:
 

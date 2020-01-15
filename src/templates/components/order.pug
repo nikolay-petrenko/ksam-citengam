@@ -1,0 +1,13 @@
+include ../data/order-data
+section.order.block
+  .order__container.container
+    h2.order__title.title Как заказать?
+    ul.order__list
+      each item in orderItems
+        li.order__item
+          .order__icon
+            img.order__icon-img(src=item.icon, alt="")
+          .order__description
+            p.order__label!= item.label
+            p.order__sublabel!= item.sublabel
+
