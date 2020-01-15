@@ -123,6 +123,10 @@
 }
 
 @include r(767) {
+  .expert {
+    padding-top: 0 !important;
+  }
+
   .expert__title {
     margin-bottom: 30px;
     padding-top: 30px;
@@ -143,13 +147,9 @@
 }
 
 @include r(639) {
-  .expert__container {
-    border: none;
-  }
-
   .expert__title {
     margin-bottom: 15px;
-    padding-top: 0;
+    padding-top: 30px;
     font-size: 30px;
   }
 
@@ -179,6 +179,7 @@
 
 @include r(479) {
   .expert__title {
+    padding-top: 25px;
     font-size: 28px;
   }
 }

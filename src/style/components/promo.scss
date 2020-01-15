@@ -226,6 +226,16 @@
 }
 
 @include r(479) {
+  .promo__hgroup {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .promo__subtitle {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
   .promo__pictures {
     max-width: 300px;
     margin: 0 auto 25px;

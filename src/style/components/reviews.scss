@@ -150,6 +150,10 @@
 }
 
 @include r(1023) {
+  .reviews {
+    background: $color-lightpink;
+  }
+
   .reviews__title {
     margin-bottom: 40px;
   }
