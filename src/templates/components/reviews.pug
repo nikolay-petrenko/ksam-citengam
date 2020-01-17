@@ -23,4 +23,4 @@ section.reviews.block
                   |
                   |
                   span.reviews__days-ago= `${item.ago} giorni fa`
-                .reviews__counters= item.likes
+                div(class=`reviews__counters${item.likesClass ? ` ${item.likesClass}` : ''}`)= item.likes

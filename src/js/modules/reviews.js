@@ -1,3 +1,3 @@
 export default () => {
-  $(`#reviews-wrapper`).overlayScrollbars({});
+  $('#reviews-wrapper').overlayScrollbars({});
 };

@@ -1,9 +1,10 @@
 export default () => {
-  const $prices = $(`.previous-price, .current-price, .half-price`);
-  const $currencies = $(`.currency`);
+  const $prices = $('.previous-price, .current-price, .half-price');
+  const $currencies = $('.currency');
   const CurrencyMap = {
-    руб: `₽`,
-    грн: `₴`
+    руб: '₽',
+    грн: '₴',
+    eur: '€'
   };
 
   $prices.each(function () {

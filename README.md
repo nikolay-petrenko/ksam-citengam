@@ -1,4 +1,8 @@
-> Для удобства совместной работы на проекте, рекомендуется всем установить в свой редактор плагин [EditorConfig](https://editorconfig.org/#download).
+# everad-gulp-template
+
+> Для удобной совместной работы на проекте, рекомендуется всем участникам установить в свой редактор плагин [EditorConfig](https://editorconfig.org/#download).
+
+## Кратко о сборке
 
 ### Установить все зависимости
 
@@ -14,21 +18,20 @@
 
 ### Создать компонент
 
-`gulp make --componentName--option`
+`gulp make --componentName`
 
-`* without option  --pug/scss`
-
-`* option == 1     --pug/sass`
-
-`* option == 2     --pug/scss/js`
-
-`* option == 3     --pug/sass/js`
+Таск автоматически создает:
+- `pug`-файл в `src/templates/components/`;
+- `scss`-файл в `src/styles/components/`;
+- `js`-файл в `src/jss/modules/`.
 
 ### Пример подключения js-полифила:
 
 ```js
 import 'core-js/features/array/includes';
-console.log([1, 2, 3, 4].includes(4));
+console.log([1, 2, 3, 4].includes(4)); // example
 ```
 
 Информация о `core-js`: [github](https://github.com/zloirock/core-js).
+
+### (Не)кратко о сборке

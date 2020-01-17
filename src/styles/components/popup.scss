@@ -1,5 +1,6 @@
 .ever-popup .form {
   padding: 15px;
+  padding-left: 0;
   background-image: url("../img/promo-background.jpg");
   background-position: top left;
   border-radius: 10px;
@@ -19,7 +20,8 @@
 
 .ever-popup .form-price {
   min-width: auto;
-  padding-left: 0;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .ever-popup .ever-popup__close::before,

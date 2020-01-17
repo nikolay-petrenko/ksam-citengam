@@ -1,0 +1,18 @@
+.block {
+  @include r(1023) {
+    padding: 40px 0;
+  }
+
+  @include r(767) {
+    padding: 30px 0;
+  }
+
+  @include r(639) {
+    padding: 30px 0;
+  }
+
+  @include r(479) {
+    padding: 25px 0;
+  }
+}
+

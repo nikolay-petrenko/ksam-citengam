@@ -25,8 +25,11 @@
 
 .expert__body {
   position: relative;
-  margin: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin-left: 27px;
+  margin-right: 8px;
   padding: 28px;
   padding-right: 220px;
   font-size: 24px;
@@ -46,10 +49,6 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
-}
-
-.expert__description {
-  padding-top: 34px;
 }
 
 .expert__description b {
