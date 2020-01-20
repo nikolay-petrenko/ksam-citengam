@@ -252,22 +252,50 @@
   .carousel__item {
     min-height: auto;
   }
+
+  .carousel__navigation .slick-arrow {
+    top: 130px;
+    width: 50px;
+    height: 50px;
+    transform: none;
+    overflow: hidden;
+  }
+
+  .carousel__navigation .slick-prev {
+    left: 0;
+  }
+
+  .carousel__navigation .slick-prev::before {
+    left: 15px;
+  }
+
+  .carousel__navigation .slick-next {
+    right: 0;
+  }
+
+  .carousel__navigation .slick-next::before {
+    right: 15px;
+  }
 }
 
 @include r(479) {
   .carousel__labels {
+    position: relative;
     display: block;
   }
 
   .carousel__label {
-    width: 290px;
+    width: 220px;
     margin: 0 auto;
+    font-size: 24px;
   }
 
   .carousel__label--second {
-    position: relative;
+    position: absolute;
     z-index: 1;
-    top: 320px;
+    top: 336px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .carousel__carousel {
@@ -279,19 +307,27 @@
     display: block;
     width: 300px;
     margin: 0 auto;
+    padding-top: 18px;
   }
 
   .carousel__block {
     width: 100%;
     min-height: 265px;
+    margin-top: 25px;
+  }
+
+  .carousel__block::before {
+    top: -23px;
+    width: 40px;
+    height: 40px;
   }
 
   .carousel__block:last-child {
-    margin-top: 90px;
+    margin-top: 95px;
   }
 
   .carousel__navigation .slick-arrow {
-    top: 360px;
+    top: 330px;
     transform: none;
   }
 

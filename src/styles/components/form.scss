@@ -58,7 +58,21 @@
 }
 
 .form__middle {
-  padding: 28px 22px 44px;
+  // padding: 28px 22px 44px;
+  padding: 20px 22px 10px;
+}
+
+.form__romanian-terms {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.form__romanian-term-item:not(:last-of-type) {
+  margin-bottom: 5px;
+}
+
+.form__romanian-term-item b {
+  font-weight: 700;
 }
 
 .form__fields {
@@ -94,6 +108,12 @@
 
 .form__button {
   margin: 0 auto;
+}
+
+.form__romanian-note {
+  padding-top: 10px;
+  color: $color-darkgray;
+  text-align: center;
 }
 
 @include r(767) {

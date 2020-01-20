@@ -1,12 +1,14 @@
 const process = require('process');
 
-// const
-
 const paths = {
+  rollup: {
+    entry: 'src/js/main.js',
+    bundle: 'build/js/main.js'
+  },
   src: {
-    pug: 'src/templates/*.pug',
-    style: 'src/styles/main.scss',
-    scripts: 'src/js/libs/*.js',
+    templates: 'src/templates',
+    styles: 'src/styles',
+    scripts: 'src/js',
     img: 'src/img/*.+(jpg|jpeg|png|svg|ico|gif)',
     svg: 'src/img/**/*.svg',
     fonts: 'src/fonts/**/*',
@@ -14,20 +16,21 @@ const paths = {
   },
   build: {
     main: 'build',
-    html: 'build',
-    style: 'build/css',
+    markup: 'build',
+    styles: 'build/css',
     scripts: 'build/js',
     img: 'build/img',
     fonts: 'build/fonts',
     localization: "build/localization"
   },
   watch: {
-    pug: 'src/templates/**/*.pug',
-    style: 'src/**/*.+(sass|scss)',
-    scripts: 'src/**/*.js',
-    img: 'src/img/*.+(jpg|jpeg|png|svg|ico|gif)',
+    build: 'build',
+    templates: 'src/templates/**/*.pug',
+    styles: 'src/styles/**/*.+(sass|scss)',
+    scripts: 'src/js/**/*.js',
+    images: 'src/img/**/*.+(jpg|jpeg|png|svg|ico|gif)',
     svg: 'src/img/**/*.svg',
-    fonts: 'src/fonts/**/*'
+    font: 'src/fonts/**/*'
   }
 }
 

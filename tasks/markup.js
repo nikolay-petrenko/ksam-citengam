@@ -12,11 +12,11 @@ const prettySettings = {
 };
 
 function markup() {
-  return src(paths.src.pug)
+  return src(`${paths.src.templates}/*.pug`)
     .pipe(plumber())
     .pipe(pug())
     .pipe(condition(dev(), pretty(prettySettings)))
-    .pipe(dest(paths.build.html))
+    .pipe(dest(paths.build.markup))
     .pipe(browserSync.reload({ stream: true }));
 }
 

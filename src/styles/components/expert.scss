@@ -25,9 +25,6 @@
 
 .expert__body {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   margin-left: 27px;
   margin-right: 8px;
   padding: 28px;
@@ -49,6 +46,10 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
+}
+
+.expert__description {
+  padding-top: 15px;
 }
 
 .expert__description b {
@@ -97,6 +98,10 @@
 }
 
 @include r(1023) {
+  .expert__container {
+    margin-bottom: 23px;
+  }
+
   .expert__title {
     margin-bottom: 35px;
     padding-top: 40px;
@@ -146,6 +151,10 @@
 }
 
 @include r(639) {
+  .expert__container {
+    margin-bottom: 0;
+  }
+
   .expert__title {
     margin-bottom: 15px;
     padding-top: 30px;

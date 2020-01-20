@@ -1,0 +1,15 @@
+.romanian-renouncement {
+  padding: 80px 0 40px;
+}
+
+.romanian-renouncement__text {
+  color: $color-darkgray;
+  text-align: center;
+}
+
+@include r(767) {
+  .romanian-renouncement {
+    padding-top: 0 !important;
+  }
+}
+

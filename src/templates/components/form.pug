@@ -10,6 +10,9 @@ form.x_order_form.form(action="/submit", method="POST")
         .form__timer
           include timer
       .form__middle
+        .form__romanian-terms
+          p.form__romanian-term-item Începutul promoției #[b.date-1]
+          p.form__romanian-term-item Promoția se termină #[b.date-0]
         .form__amount
           include form-amount
         .form__fields
@@ -18,3 +21,4 @@ form.x_order_form.form(action="/submit", method="POST")
           .form__field
             input.form__input(type="text", name="phone", placeholder="Ваш телефон")
         button.form__button.button(type="submit") заказать
+        p.form__romanian-note * Funcționează asupra mărfurilor în limitele unui canal de distribuţie

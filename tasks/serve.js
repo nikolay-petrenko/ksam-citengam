@@ -11,7 +11,7 @@ const font = require('./font');
 function serve() {
   browserSync({
     server: {
-      baseDir: paths.build.main
+      baseDir: paths.watch.build
     },
     open: false,
     notify: false,
@@ -20,11 +20,11 @@ function serve() {
     host: 'localhost'
   });
 
-  watch(paths.watch.pug, markup);
-  watch(paths.watch.style, style);
+  watch(paths.watch.templates, markup);
+  watch(paths.watch.styles, style);
   watch(paths.watch.scripts, script);
-  watch(paths.watch.img, image);
-  watch(paths.watch.fonts, font);
+  watch(paths.watch.images, image);
+  watch(paths.watch.font, font);
 }
 
 module.exports = serve;

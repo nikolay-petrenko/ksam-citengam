@@ -1,3 +1,4 @@
+import './helpers/postDate';
 import scrollSmooth from './helpers/smooth-scroll.js';
 // import form from './modules/form.js';
 import formAmount from './modules/form-amount.js';

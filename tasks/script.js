@@ -8,17 +8,17 @@ const browserSync = require('browser-sync');
 
 async function script() {
   const bundle = await rollup.rollup({
-    input: 'src/js/main.js',
+    input: paths.rollup.entry,
     plugins: [commonjs(), resolve(), babel()]
   });
 
   await bundle.write({
-    file: 'build/js/main.js',
+    file: paths.rollup.bundle,
     format: 'iife',
     sourcemap: dev()
   });
 
-  return src(paths.src.scripts)
+  return src(`${paths.src.scripts}/libs/*.js`)
     .pipe(dest(paths.build.scripts))
     .pipe(browserSync.reload({ stream: true }));
 }

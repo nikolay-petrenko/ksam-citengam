@@ -7,7 +7,8 @@
 }
 
 .form-amount__label {
-  margin-bottom: 22px;
+  // margin-bottom: 22px;
+  margin-bottom: 15px;
   font-size: 21px;
   font-weight: 700;
 }
@@ -15,6 +16,10 @@
 .form-amount__buttons {
   display: flex;
   justify-content: space-between;
+}
+
+.form__set-amount:not(:last-of-type) {
+  margin-right: 8px;
 }
 
 .form-amount__price {

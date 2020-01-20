@@ -15,7 +15,7 @@ const renameSettings = {
 };
 
 function style() {
-  return src(paths.src.style)
+  return src(`${paths.src.styles}/main.scss`)
     .pipe(plumber())
     .pipe(condition(dev(), sourcemaps.init()))
     .pipe(sass())
@@ -25,7 +25,7 @@ function style() {
     .pipe(csso())
     .pipe(condition(dev(), sourcemaps.write()))
     .pipe(rename(renameSettings))
-    .pipe(dest(paths.build.style))
+    .pipe(dest(paths.build.styles))
     .pipe(browserSync.reload({ stream: true }));
 }
 

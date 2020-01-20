@@ -84,7 +84,8 @@
   cursor: pointer;
 }
 
-.promo__scroll:hover {
+.promo__scroll:hover:not(:focus),
+.promo__scroll:active {
   background-color: $color-yellow;
 }
 
@@ -143,12 +144,13 @@
   }
 
   .promo__picture.pack {
-    left: -280px;
+    left: -230px;
     max-width: none;
   }
 
   .promo__picture.pack img {
     max-width: none;
+    width: 340px;
   }
 
   .promo__scroll {
@@ -158,45 +160,12 @@
 }
 
 @include r(767) {
-  .form__container {
-    padding-top: 20px;
-  }
-
-  .promo__hgroup {
-    margin-top: 0;
-  }
-
-  .promo__pictures{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 0;
-  }
-
-  .promo__pictures {
-    flex: 0 1 340px;
-  }
-
-  .promo__picture.pack img {
-    max-width: 100%;
-  }
-
-  .promo__picture.pack {
-    position: static;
-  }
-
-  .promo__form {
-    margin: 0 auto;
-    padding-top: 0;
-  }
-}
-
-@include r(639) {
   .promo__container {
     display: block;
   }
 
   .promo__hgroup {
+    margin: 0 auto;
     margin-bottom: 30px;
     padding: 0;
     border: none;
@@ -220,17 +189,33 @@
     text-align: center;
   }
 
-  .promo__pictures {
-    margin-bottom: 30px;
+  .promo__pictures{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .promo__picture.pack {
+    max-width: none;
+  }
+
+  .promo__picture.pack img {
+    width: auto;
+    max-width: 100%;
+  }
+
+  .promo__picture.pack {
+    position: static;
+  }
+
+  .promo__form {
+    margin: 0 auto;
+    padding-top: 0;
   }
 }
 
 @include r(479) {
-  .promo__hgroup {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
   .promo__subtitle {
     max-width: 200px;
     margin: 0 auto;

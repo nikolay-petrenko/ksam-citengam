@@ -10,10 +10,10 @@ section.reviews.block
               img.reviews__thumb.img(src=item.thumb, alt="")
             .reviews__body
               p.reviews__description
-                span.reviews__name= item.name
+                span.reviews__name!= item.name
                 |
                 |
-                span= item.description
+                span!= item.description
               .reviews__footer
                 .reviews__triggers
                   span.reviews__trigger Mi piace

@@ -56,6 +56,7 @@
 }
 
 .form-price__current {
+  position: relative;
   margin-bottom: 3px;
   color: $color-red;
 }
@@ -68,6 +69,13 @@
 
 .form-price__current .currency {
   font-size: 40px;
+}
+
+.form-price__current .asterisk {
+  position: absolute;
+  top: 6px;
+  right: 2px;
+  font-size: 20px;
 }
 
 .form-price__label {
