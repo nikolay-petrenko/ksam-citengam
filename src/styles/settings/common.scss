@@ -97,3 +97,7 @@ button {
 .accent-red {
   color: $color-red;
 }
+
+[class*="romanian"] {
+  display: none;
+}
