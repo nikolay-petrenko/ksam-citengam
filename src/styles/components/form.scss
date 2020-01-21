@@ -59,7 +59,7 @@
 
 .form__middle {
   padding: 28px 22px 44px;
-  // padding: 20px 22px 10px;
+  background-color: white;
 }
 
 .form__romanian-terms {
@@ -119,11 +119,6 @@
 @include r(767) {
   .form__container {
     justify-content: center;
-  }
-}
-
-@include r(639) {
-  .form__container {
     padding-top: 0;
   }
 }

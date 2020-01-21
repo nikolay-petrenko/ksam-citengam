@@ -1,5 +1,5 @@
 .footer {
-  padding-top: 0 !important;
+  padding-top: 99px;
   padding-bottom: 40px;
 }
 
@@ -11,8 +11,8 @@
   padding-top: 10px;
 }
 
-@include r(767) {
+@include r(1219) {
   .footer {
-    padding-top: 0 !important;
+    padding-top: 70px;
   }
 }

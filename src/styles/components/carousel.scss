@@ -221,8 +221,8 @@
 
   .carousel__item {
     min-height: 355px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .carousel__block {
@@ -235,16 +235,23 @@
   }
 
   .carousel__navigation .slick-prev {
-    left: -15px;
+    left: -5px;
   }
   .carousel__navigation .slick-next {
-    right: -15px;
+    right: -5px;
   }
 }
 
 @include r(767) {
   .carousel__item {
     min-height: 340px;
+  }
+
+  .carousel__navigation .slick-prev {
+    left: -5px;
+  }
+  .carousel__navigation .slick-next {
+    right: -5px;
   }
 }
 
@@ -298,9 +305,13 @@
     transform: translateX(-50%);
   }
 
+  .carousel__body {
+    max-width: 300px;
+    margin: -20px auto 0;
+  }
+
   .carousel__carousel {
-    margin-top: -20px;
-    padding-top: 0;
+    padding: 0;
   }
 
   .carousel__item {
@@ -323,7 +334,7 @@
   }
 
   .carousel__block:last-child {
-    margin-top: 95px;
+    margin-top: 110px;
   }
 
   .carousel__navigation .slick-arrow {
