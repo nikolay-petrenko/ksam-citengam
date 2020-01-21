@@ -16,3 +16,9 @@
     padding-top: 70px;
   }
 }
+
+@include r(767) {
+  .footer {
+    padding-top: 0 !important;
+  }
+}
