@@ -1,5 +1,6 @@
 export default () => {
-  const $buttons = $('.about__show');
+  const BREAKPOINT = 1023;
+
   const $items = $('.about__item');
   const $descriptions = $('.about__description');
 
@@ -16,9 +17,12 @@ export default () => {
 
   $(window).resize(setDescriptionsHeight);
 
-  $buttons.click(function () {
-    const $this = $(this);
-    const $currentItem = $this.parents('.about__item');
+  $items.click(function () {
+    if ($(window).outerWidth() > BREAKPOINT) {
+      return;
+    }
+
+    const $currentItem = $(this);
     const $currentDescription = $currentItem.find('.about__description');
 
     $items.not($currentItem).removeClass('show');
