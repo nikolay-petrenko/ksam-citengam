@@ -9,6 +9,7 @@
   position: relative;
   display: flex;
   flex-wrap: wrap;
+  transition: height $transition-duration linear;
 }
 
 .about__item {

@@ -1,6 +1,7 @@
 export default () => {
   const BREAKPOINT = 1023;
 
+  const $buttons = $('.about__show');
   const $items = $('.about__item');
   const $descriptions = $('.about__description');
 
